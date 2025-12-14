@@ -40,7 +40,7 @@ jobs:
           password: ${{ secrets.FTP_PASSWORD }}
           port: ${{ secrets.FTP_PORT }}
           local-dir: ./dist/        # Deploy the built files from dist folder
-          server-dir: /home/betu2xvk/public_html/  # Stellar web root
+          server-dir: /home/betu2xvk/betulerenel.com/portfolio/  # Stellar web root
           dry-run: false
           dangerous-clean-slate: true  # Clean old files before deploying
           exclude: |
