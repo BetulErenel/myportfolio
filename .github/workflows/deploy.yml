@@ -41,7 +41,7 @@ jobs:
           port: ${{ secrets.FTP_PORT }}
           protocol: ${{ secrets.FTP_PROTOCOL || 'ftp' }}  # Default to 'ftp', can be 'ftps'
           local-dir: ./dist/  # Deploy built files from dist folder
-          server-dir: /home/betu2xvk/betulerenel.com/portfolio/
+          server-dir: /home/betuzxvk/betulerenel.com/portfolio/
           dry-run: false
           dangerous-clean-slate: true  # Clean old files before deploying
           exclude: |
