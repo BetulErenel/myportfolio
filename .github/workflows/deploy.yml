@@ -40,7 +40,7 @@ jobs:
           password: ${{ secrets.FTP_PASSWORD }}
           port: ${{ secrets.FTP_PORT }}
           protocol: ftps  # use explicit FTPS
-          secure: true    # secure connection
+          security: strict  # strict TLS/SSL security
           local-dir: ./dist/  # Deploy built files from dist folder
           server-dir: /home/betu2xvk/betulerenel.com/portfolio/
           dry-run: false
