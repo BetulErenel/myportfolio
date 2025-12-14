@@ -31,7 +31,7 @@ jobs:
           DEPLOY_TARGET: stellar
         run: npm run build
 
-      # Step 5: Deploy via FTPS
+      # Step 5: Deploy via FTP/FTPS
       - name: Deploy via FTP
         uses: SamKirkland/FTP-Deploy-Action@4.3.3
         with:
@@ -39,8 +39,7 @@ jobs:
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
           port: ${{ secrets.FTP_PORT }}
-          protocol: ftps  # use explicit FTPS
-          security: strict  # strict TLS/SSL security
+          protocol: ${{ secrets.FTP_PROTOCOL || 'ftp' }}  # Default to 'ftp', can be 'ftps'
           local-dir: ./dist/  # Deploy built files from dist folder
           server-dir: /home/betu2xvk/betulerenel.com/portfolio/
           dry-run: false
