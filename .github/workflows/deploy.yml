@@ -3,7 +3,7 @@ name: Deploy to Stellar via FTP
 on:
   push:
     branches:
-      - main  # triggers when you push to main
+      - main  # runs when you push to main
 
 jobs:
   ftp-deploy:
@@ -25,13 +25,13 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      # Step 4: Build the project for Stellar
+      # Step 4: Build the React app for Stellar
       - name: Build project
         env:
           DEPLOY_TARGET: stellar
         run: npm run build
 
-      # Step 5: Deploy built files via FTP
+      # Step 5: Deploy via FTPS
       - name: Deploy via FTP
         uses: SamKirkland/FTP-Deploy-Action@4.3.3
         with:
@@ -39,10 +39,12 @@ jobs:
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
           port: ${{ secrets.FTP_PORT }}
-          local-dir: ./dist/   # Deploy built files from dist folder (not source files)
-          server-dir: /home/betu2xvk/betulerenel.com/portfolio/  # Stellar web root
+          protocol: ftps  # use explicit FTPS
+          secure: true    # secure connection
+          local-dir: ./dist/  # Deploy built files from dist folder
+          server-dir: /home/betu2xvk/betulerenel.com/portfolio/
           dry-run: false
-          dangerous-clean-slate: true  # Automatically delete old files before deploying
+          dangerous-clean-slate: true  # Clean old files before deploying
           exclude: |
             .git/
             .github/
