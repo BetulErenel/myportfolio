@@ -1,0 +1,205 @@
+.App {
+  min-height: 100vh;
+  padding-top: 56px; /* Height of fixed navbar */
+}
+
+/* Hero Section */
+.hero-section {
+  min-height: 90vh;
+  background: linear-gradient(135deg, #1e3a5f 0%, #2c3e50 50%, #34495e 100%);
+  padding: 100px 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('data:image/svg+xml,<svg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><g fill="%23ffffff" fill-opacity="0.05"><circle cx="30" cy="30" r="2"/></g></svg>');
+  opacity: 0.5;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+}
+
+.profile-circle {
+  position: relative;
+  z-index: 1;
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+/* About Section */
+.about-section {
+  background-color: #ffffff;
+  padding: 80px 0;
+}
+
+.about-section .card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-radius: 10px;
+}
+
+.about-section .card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1) !important;
+}
+
+.about-section ul li {
+  padding: 8px 0;
+  color: #555;
+}
+
+/* CTA Section */
+.cta-section {
+  background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+}
+
+/* Blog Page */
+.blog-page {
+  background-color: #f5f6fa;
+  min-height: calc(100vh - 56px);
+}
+
+.blog-post {
+  border-radius: 10px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.blog-post:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1) !important;
+  background-color: #fafafa;
+}
+
+.comments-section {
+  margin-top: 20px;
+}
+
+.comment {
+  border-left: 3px solid #2c3e50;
+  transition: background-color 0.2s ease;
+}
+
+.comment:hover {
+  background-color: #e9ecef !important;
+}
+
+/* GitHub Badge */
+.badge.bg-dark:hover {
+  background-color: #1a1a1a !important;
+  transform: scale(1.05);
+  transition: transform 0.2s ease;
+}
+
+.badge.bg-dark {
+  transition: all 0.2s ease;
+}
+
+/* Button Styles */
+.btn {
+  border-radius: 8px;
+  font-weight: 500;
+  font-size: 1rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  padding: 10px 25px;
+  transform: scale(1);
+  display: inline-block;
+}
+
+.btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.btn-primary {
+  background: #2c3e50;
+  border: none;
+  color: #ffffff;
+}
+
+.btn-primary:hover {
+  background: #34495e;
+  border: none;
+  color: #ffffff;
+}
+
+/* Card Styles */
+.card {
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.card-header {
+  border-radius: 10px 10px 0 0 !important;
+  font-weight: 600;
+}
+
+/* Form Styles */
+.form-control:focus {
+  border-color: #2c3e50;
+  box-shadow: 0 0 0 0.2rem rgba(44, 62, 80, 0.25);
+}
+
+/* Navbar Active State */
+.navbar-nav .nav-link.active {
+  color: #3498db !important;
+  font-weight: 600;
+}
+
+.navbar-nav .nav-link:hover {
+  color: #3498db !important;
+}
+
+/* Contact Links */
+.hero-content a,
+.cta-section a {
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.hero-content a:hover,
+.cta-section a:hover {
+  opacity: 0.8;
+  text-decoration: underline;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .hero-section {
+    min-height: 70vh;
+    padding: 60px 0;
+  }
+
+  .display-3 {
+    font-size: 2.5rem;
+  }
+
+  .display-4 {
+    font-size: 2rem;
+  }
+
+  .profile-circle i {
+    font-size: 200px !important;
+  }
+
+  .hero-content a,
+  .cta-section a {
+    display: block;
+    margin-bottom: 10px;
+  }
+}
