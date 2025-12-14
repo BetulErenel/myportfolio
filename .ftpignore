@@ -1,0 +1,13 @@
+.git/
+.github/
+node_modules/
+README.md
+*.yml
+*.yaml
+src/
+public/
+*.json
+*.config.js
+.eslintrc*
+.DS_Store
+
